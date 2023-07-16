@@ -1,7 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Product = require('./models/productModel');
+const dotenv = require("dotenv")
+dotenv.config()
 const app = express();
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -80,7 +83,7 @@ app.delete('/products/:id', async (req, res) => {
 })
 
 mongoose.
-    connect('mongodb+srv://samuel:z6Zwppn23TNEZhbC@project-1.75xlnyv.mongodb.net/node-API?retryWrites=true&w=majority')
+    connect(`${process.env.MONGODB_URI}`)
     .then(() => {
         app.listen(3000, () => {
             console.log('Node API app is running on port 3000');

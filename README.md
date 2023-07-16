@@ -31,7 +31,7 @@ Next, you need to install the required Node.js packages. Run the following comma
 Before running the API, you need to make sure your MongoDB server is up and running. If you are running MongoDB locally, it should be available at (mongodb://localhost:27017/).
 
 #### 5. Set environment variables:
-Define the following environment variables:
+Create a new file named '.env' in the root of the project and define the following environment variables:
 
 ```
 PORT=3000
